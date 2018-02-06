@@ -72,6 +72,7 @@ You can read more about this issue [here](https://github.com/angular/material2/i
 - `startIndex` | Type: `number` | Default value: `0` - sets index of selected image on start
 - `linkTarget` | Type: `string` | Default value: `_blank` - sets target attribute of link
 - `lazyLoading` | Type: `boolean` | Default value: `true` - enables/disables lazy loading for images
+- `lazyLoadingSingleImage` | Type: `boolean` | Default value: `false` - enables/disables lazy loading ONLY one image (no animations in that case)
 
 - `image` | Type: `boolean` | Default value: `true` - enables or disables image
 - `imagePercent` | Type: `number` | Default value: `75` - percentage height

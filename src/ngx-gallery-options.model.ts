@@ -13,6 +13,7 @@ export interface INgxGalleryOptions {
     startIndex?: number;
     linkTarget?: string;
     lazyLoading?: boolean;
+    lazyLoadingSingleImage?: boolean;
     image?: boolean;
     imagePercent?: number;
     imageArrows?: boolean;
@@ -75,6 +76,7 @@ export class NgxGalleryOptions implements INgxGalleryOptions {
     startIndex?: number;
     linkTarget?: string;
     lazyLoading?: boolean;
+    lazyLoadingSingleImage?: boolean;
     image?: boolean;
     imagePercent?: number;
     imageArrows?: boolean;
@@ -143,6 +145,7 @@ export class NgxGalleryOptions implements INgxGalleryOptions {
         this.startIndex = use(obj.startIndex, 0);
         this.linkTarget = use(obj.linkTarget, '_blank');
         this.lazyLoading = use(obj.lazyLoading, true);
+        this.lazyLoadingSingleImage = use(obj.lazyLoadingSingleImage, false);
 
         this.image = use(obj.image, true);
         this.imagePercent = use(obj.imagePercent, 75);

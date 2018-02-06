@@ -36,6 +36,7 @@ export class NgxGalleryImageComponent implements OnInit, OnChanges {
     @Input() autoPlayPauseOnHover: boolean;
     @Input() infinityMove: boolean;
     @Input() lazyLoading: boolean;
+    @Input() lazyLoadingSingleImage: boolean;
     @Input() actions: NgxGalleryAction[];
 
     @Output() onClick = new EventEmitter();
@@ -89,7 +90,9 @@ export class NgxGalleryImageComponent implements OnInit, OnChanges {
     }
 
     getImages(): NgxGalleryOrderedImage[] {
-        if (this.lazyLoading) {
+        if (this.lazyLoadingSingleImage) {
+            return [this.images[this.selectedIndex]];
+        } else if (this.lazyLoading) {
             let indexes = [this.selectedIndex];
             let prevIndex = this.selectedIndex - 1;
 
@@ -106,7 +109,6 @@ export class NgxGalleryImageComponent implements OnInit, OnChanges {
             } else if (nextIndex < this.images.length) {
                 indexes.push(nextIndex);
             }
-
             return this.images.filter((img, i) => indexes.indexOf(i) != -1);
         } else {
             return this.images;
